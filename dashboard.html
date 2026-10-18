@@ -10,6 +10,12 @@
     </head>
     <!-- All content goes within the body section -->
     <body class="dashboard-page">
+        <!-- Mock loading screen -->
+        <div class="loading-screen">
+            <p>Fun Fact: People have been diversifying their wealth for thousands of years—long before stocks existed, wealth was stored in things like land, precious metals, livestock, art, and other valuable assets.</p>
+            <div class="loading-spinner" aria-hidden="true"></div>
+            <div class="loading-check" aria-hidden="true"><img src="https://cdn.jsdelivr.net/gh/TitaniumShinobi/csc104@main/assets/check.svg" alt="Loading complete"></div>
+        </div>
         <!-- Replace Page Title with the theme of your page -->
         <header>
             <h1>
@@ -30,24 +36,33 @@
                 <a href="#trade">Trade</a>
 
             </nav>
-        </header>
-        <main class="dashboard-main">
             <div class="profile-menu">
                 <button class="profile-button" type="button" aria-label="User profile menu">
-                    <img src="https://cdn.jsdelivr.net/gh/TitaniumShinobi/csc104@main/assets/PXL_20230623_123456789.jpg" alt="User Profile" class="profile-icon">
+                    <img src="https://cdn.jsdelivr.net/gh/TitaniumShinobi/csc104@main/assets/PXL_20251226_174400331.jpg" alt="User Profile" class="profile-icon">
                 </button>
                 <div class="profile-dropdown">
-                    <a href="#profile">Profile</a>
+                    <a href="#profile">Devon</a>
+                    <p>Pro</p>
+                    <hr style="border: none; height: 1px; background: #e5dfd9; margin: 0rem 0;" />
+                    <div style="margin-top: 0.1em;"></div>
+                    <a href="#usage">Usage</a>
+                    <a href="#referrals">Invite a friend</a>
                     <a href="#settings">Settings</a>
-                    <a href="#./index.html">Log out</a>
+                    <div style="margin-top: 0.25em;"></div>
+                    <hr style="border: none; height: 1px; background: #e5dfd9; margin: 0rem 0;" />
+                    <div style="margin-top: 0.1em;"></div>
+                    <a href="#help">Help</a>
+                    <a href="./index.html">Log out</a>
                 </div>
             </div>
+        </header>
+        <main class="dashboard-main">
             <h2>FINANCIAL OVERVIEW</h2>
 
             <section class="financial-summary" aria-label="Financial summary">
                 <div>
                     <strong>$2,487.22</strong>
-                    <span>Available Balance</span>
+                    <span>Available Balance(s)</span>
                 </div>
 
                 <div>
@@ -68,22 +83,125 @@
 
             <section class="financial-history">
                 <h3>Net Worth</h3>
+                <!-- Net Worth Line Chart -->
+                <div class="net-worth-chart">
+                    <svg viewBox="0 0 600 300" role="img"
+                        aria-label="Net worth increased from $30,000 in 2021 to $68,000 in 2026">
 
+                        <!-- Vertical dollar scale -->
+                        <g fill="#364465"
+                        font-family='Courier New', Courier, monospace"
+                        font-size="14"
+                        text-anchor="end">
+
+                            <text x="42" y="245">30K</text>
+                            <text x="42" y="195">40K</text>
+                            <text x="42" y="145">50K</text>
+                            <text x="42" y="95">60K</text>
+                            <text x="42" y="45">70K</text>
+
+                        </g>
+
+                        <!-- Horizontal gridlines -->
+                        <g stroke="#364465" stroke-opacity="0.25">
+                            <line x1="50" y1="40" x2="580" y2="40"/>
+                            <line x1="50" y1="90" x2="580" y2="90"/>
+                            <line x1="50" y1="140" x2="580" y2="140"/>
+                            <line x1="50" y1="190" x2="580" y2="190"/>
+                            <line x1="50" y1="240" x2="580" y2="240"/>
+                        </g>
+
+                        <!-- Net Worth line -->
+                        <polyline
+                            points="50,220 150,210 250,130 350,100 450,80 550,65"
+                            fill="none"
+                            stroke="#4285f4"
+                            stroke-width="4"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                        />
+
+                        <!-- Data points -->
+                        <g fill="#4285f4">
+                            <circle cx="50" cy="220" r="7"/>
+                            <circle cx="150" cy="210" r="7"/>
+                            <circle cx="250" cy="130" r="7"/>
+                            <circle cx="350" cy="100" r="7"/>
+                            <circle cx="450" cy="80" r="7"/>
+                            <circle cx="550" cy="65" r="7"/>
+                        </g>
+
+                        <!-- Years -->
+                        <g fill="#000000" font-size="16" font-family="Courier New, monospace" text-anchor="middle">
+                            <text x="50" y="275">2021</text>
+                            <text x="150" y="275">2022</text>
+                            <text x="250" y="275">2023</text>
+                            <text x="350" y="275">2024</text>
+                            <text x="450" y="275">2025</text>
+                            <text x="550" y="275">2026</text>
+                        </g>
+                    </svg>
+                </div>
+                <h3>Recent Transactions</h3>
                 <table>
-                    <caption>Net Worth History</caption>
                     <thead>
                         <tr>
-                            <th scope="col">Year</th>
-                            <th scope="col">Net Worth</th>
+                            <th scope="col">Date</th>
+                            <th scope="col">Description</th>
+                            <th scope="col">Category</th>
+                            <th scope="col">Amount</th>
+                            <th scope="col">Balance</th>
                         </tr>
                     </thead>
+
                     <tbody>
-                        <tr><td>2021</td><td>$30,000</td></tr>
-                        <tr><td>2022</td><td>$32,000</td></tr>
-                        <tr><td>2023</td><td>$52,000</td></tr>
-                        <tr><td>2024</td><td>$60,000</td></tr>
-                        <tr><td>2025</td><td>$65,000</td></tr>
-                        <tr><td>2026</td><td>$68,000</td></tr>
+                        <tr>
+                            <td>Oct 18, 2026</td>
+                            <td>Direct Deposit - Payroll</td>
+                            <td>Income</td>
+                            <td>+$2,750.00</td>
+                            <td>$4,285.62</td>
+                        </tr>
+
+                        <tr>
+                            <td>Oct 17, 2026</td>
+                            <td>Amazon Marketplace</td>
+                            <td>Shopping</td>
+                            <td>-$84.99</td>
+                            <td>$1,535.62</td>
+                        </tr>
+
+                        <tr>
+                            <td>Oct 16, 2026</td>
+                            <td>DoorDash</td>
+                            <td>Food & Dining</td>
+                            <td>-$29.47</td>
+                            <td>$1,620.61</td>
+                        </tr>
+
+                        <tr>
+                            <td>Oct 15, 2026</td>
+                            <td>Shell Gas Station</td>
+                            <td>Transportation</td>
+                            <td>-$45.00</td>
+                            <td>$1,650.08</td>
+                        </tr>
+
+                        <tr>
+                            <td>Oct 14, 2026</td>
+                            <td>Netflix Subscription</td>
+                            <td>Entertainment</td>
+                            <td>-$17.99</td>
+                            <td>$1,695.08</td>
+                        </tr>
+
+                        <tr>
+                            <td>Oct 13, 2026</td>
+                            <td>Interest Payment</td>
+                            <td>Interest</td>
+                            <td>+$0.42</td>
+                            <td>$1,713.07</td>
+                        </tr>
                     </tbody>
                 </table>
             </section>
