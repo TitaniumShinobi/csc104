@@ -1,27 +1,56 @@
 @import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;600;700;800;900&display=swap');
 
-/* Page layout */
+/* =========================================
+   THE PROVIDENTIAL IMPERIAL
+   CSC104 Final Project
+   ========================================= */
+
+
+/* =========================================
+   1. GENERAL PAGE STYLING
+   ========================================= */
+
 body {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   margin: 0;
+  min-height: 100vh;
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
+  color: #364465;
 }
 
-/* Header layout */
+/* Homepage background */
+
+.index-page {
+  background-image: url("https://cdn.jsdelivr.net/gh/TitaniumShinobi/csc104@main/assets/557b76e1-5af7-4ebf-95b4-6b62a41c397c.webp");
+}
+
+/* Dashboard background */
+
+.dashboard-page {
+  background-image: url("https://cdn.jsdelivr.net/gh/TitaniumShinobi/csc104@main/assets/pool.png");
+}
+
+
+/* =========================================
+   2. SHARED HEADER AND LOGO
+   ========================================= */
+
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+
   width: 100%;
   padding: 20px 30px;
   box-sizing: border-box;
 }
 
-/* Logo */
 header h1 {
   margin: 0;
-  flex-shrink: 0;
 }
 
 .site-logo {
@@ -31,163 +60,534 @@ header h1 {
   height: auto;
 }
 
-/* Navigation */
-header nav {
+
+/* =========================================
+   3. HOMEPAGE NAVIGATION
+   ========================================= */
+
+.index-page header nav {
   display: flex;
   align-items: center;
   gap: 12px;
 }
 
-nav a {
+.index-page nav a {
   color: #364465;
-  font-family: Georgia, serif;
+  font-family: 'Garamond', 'EB Garamond', serif;
   font-size: 21px;
   text-decoration: none;
 }
 
-/* Navigation separators */
-nav a:not(:last-child)::after {
+/* Add separators between links */
+
+.index-page nav a:not(:last-child)::after {
   content: "|";
   margin-left: 12px;
 }
 
 /* Navigation hover */
-nav a:hover {
+
+.index-page nav a:hover {
   text-decoration: underline;
 }
 
-/* Wealth Without Limits */
-h2 {
-  color: #364465;
-  text-align: center;
-  font-family: 'League Spartan', sans-serif;
-  font-size: 48px;
-  margin-top: 0;
-  margin-bottom: 30px;
-}
 
-/* Dashboard button */
-.dashboard-btn {
-  display: block;
-  width: fit-content;
-  margin: 0 auto 40px;
-  padding: 7px 15px;
+/* =========================================
+   4. HOMEPAGE LAYOUT
+   ========================================= */
 
-  background: #ffbd59;
-  color: #364465;
-
-  font-family: 'League Spartan', sans-serif;
-  font-size: 18px;
-  font-weight: 900;
-  text-decoration: none;
-
-  border-radius: 30px;
-  text-align: center;
-}
-
-.dashboard-btn:hover {
-  background: #e5a43f;
-}
-
-/* Feature card labels */
-.infra-card p {
-  background: none;
-  border: none;
-  border-radius: 0;
-
-  color: white;
-  font-family: 'League Spartan', sans-serif;
-  font-size: 32px;
-  font-weight: 900;
-  text-transform: uppercase;
-  text-align: center;
-  line-height: 1.1;
-
+.index-page main {
   width: 100%;
-  margin: 0;
-  padding: 10px 0;
-
-  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
+  text-align: center;
 }
 
-/* Three feature cards */
 .infra-section {
   width: 100%;
   padding: 20px;
   box-sizing: border-box;
 }
 
+/* Wealth Without Limits */
+
+.infra-section h2 {
+  color: #364465;
+  font-family: 'League Spartan', sans-serif;
+  font-size: 48px;
+  font-weight: 700;
+
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 30px;
+}
+
+
+/* =========================================
+   5. DASHBOARD BUTTON
+   ========================================= */
+
+.dashboard-btn {
+  display: block;
+  width: fit-content;
+
+  margin: 0 auto 100px;
+  padding: 7px 15px;
+
+  background-color: #ffbd59;
+  color: #364465;
+
+  font-family: 'League Spartan', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+
+  text-align: center;
+  text-decoration: none;
+
+  border-radius: 30px;
+}
+
+.dashboard-btn:hover {
+  background-color: #e5a43f;
+}
+
+
+/* =========================================
+   6. HOMEPAGE FEATURE CARDS
+   ========================================= */
+
 .infra-columns {
   display: grid;
   grid-template-columns: repeat(3, 200px);
+
   justify-content: center;
-  gap: 50px;
+  gap: 75px;
+
   width: 100%;
 }
 
 /* Individual cards */
+
 .infra-card {
   display: flex;
   align-items: center;
   justify-content: center;
 
   min-height: 280px;
-  min-width: 0;
   padding: 15px;
+
   box-sizing: border-box;
 
   background-size: cover;
   background-position: center;
+
   border-radius: 15px;
   overflow: hidden;
 }
 
-/* Card labels */
-.infra-card p {
+/* SVG labels inside cards */
+
+.infra-card img {
+  display: block;
   width: 100%;
-  margin: 0;
-  padding: 12px;
-  text-align: center;
+  max-width: 180px;
+  height: auto;
 }
 
-/* Responsive layout */
-@media (max-width: 700px) {
-  .infra-columns {
-    grid-template-columns: 1fr;
-  }
-}
 
-/* Fun fact */
-p {
+/* =========================================
+   7. HOMEPAGE FUN FACT
+   ========================================= */
+
+.index-page main > p {
   color: darkslategray;
   background-color: oldlace;
+
   border: 2px solid darkgoldenrod;
   border-radius: 10px;
+
   padding: 20px;
-  margin: 20px;
+  margin: 30px auto;
+
+  font-family: Georgia, serif;
   font-size: 18px;
+
   width: 80%;
   max-width: 800px;
+
+  box-sizing: border-box;
+  text-align: left;
+}
+
+
+/* =========================================
+   8. DASHBOARD PAGE LAYOUT
+   ========================================= */
+
+/*
+   The dashboard has two columns:
+
+   Left: Logo and navigation
+   Right: Financial information
+*/
+
+.dashboard-page {
+  display: grid;
+
+  grid-template-columns: 300px minmax(0, 1fr);
+  grid-template-rows: 1fr auto;
+}
+
+/* Dashboard left rail */
+
+.dashboard-page header {
+  grid-column: 1;
+  grid-row: 1;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: flex-start;
+  justify-content: flex-start;
+
+  gap: 30px;
+
+  width: 100%;
+  padding: 30px;
+
   box-sizing: border-box;
 }
 
-/* Mobile responsiveness */
+
+/* =========================================
+   9. DASHBOARD SUBNAVIGATION
+   ========================================= */
+
+#subnav {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 25px;
+
+    background-color: rgba(255, 255, 255, 0.35);
+    border-radius: 10px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+#subnav a {
+    color: #364465;
+    font-family: 'Garamond', 'EB Garamond', serif;
+    font-size: 24px;
+    text-decoration: none;
+}
+
+#subnav a:hover {
+    text-decoration: underline;
+}
+
+#subnav a::after {
+    content: none;
+}
+
+
+/* =========================================
+   10. FINANCIAL WORKSPACE
+   ========================================= */
+
+.dashboard-main {
+  grid-column: 2;
+  grid-row: 1;
+
+  width: 100%;
+  min-width: 0;
+
+  padding: 70px 30px;
+
+  box-sizing: border-box;
+}
+
+/* Financial Overview title */
+
+.dashboard-main h2 {
+  color: #364465;
+
+  font-family: 'League Spartan', sans-serif;
+  font-size: 36px;
+  font-weight: 700;
+
+  text-align: right;
+
+  margin-top: 45px;
+  margin-bottom: 40px;
+}
+
+
+/* =========================================
+   11. FINANCIAL SUMMARY
+   ========================================= */
+
+.financial-summary {
+  display: grid;
+
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+.financial-summary div {
+  display: flex;
+  flex-direction: column;
+
+  gap: 5px;
+}
+
+.financial-summary strong {
+  color: #000000;
+
+  font-family: 'Garamond', 'EB Garamond', serif;
+  font-size: 24px;
+}
+
+.financial-summary span {
+  color: #000000;
+
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 18px;
+}
+
+
+/* =========================================
+   12. NET WORTH TABLE
+   ========================================= */
+
+.financial-history {
+  width: 100%;
+}
+
+.financial-history h3 {
+  color: #000000;
+
+  font-family: Georgia, serif;
+  font-size: 24px;
+
+  margin-bottom: 15px;
+}
+
+.financial-history table {
+  width: 100%;
+
+  border-collapse: collapse;
+
+  color: #000000;
+  font-family: Georgia, serif;
+}
+
+.financial-history caption {
+  padding: 10px;
+
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.financial-history th,
+.financial-history td {
+  padding: 12px;
+
+  border-bottom: 1px solid #364465;
+
+  text-align: left;
+}
+
+.financial-history th {
+  font-weight: bold;
+}
+
+
+/* =========================================
+   13. SHARED FOOTER
+   ========================================= */
+
+footer {
+  width: 100%;
+
+  padding: 20px;
+
+  text-align: center;
+  box-sizing: border-box;
+}
+
+/* Dashboard footer spans both columns */
+
+.dashboard-page footer {
+  grid-column: 1 / -1;
+  grid-row: 2;
+}
+
+footer p {
+  margin: 0;
+  padding: 0;
+
+  color: #ffffff;
+
+  font-family: 'League Spartan', sans-serif;
+  font-size: 14px;
+
+  background: transparent;
+  border: none;
+}
+
+
+/* =========================================
+   14. RESPONSIVE DESIGN
+   ========================================= */
+
 @media (max-width: 700px) {
-  header {
+
+  /* Homepage header */
+
+  .index-page header {
     flex-direction: column;
     gap: 15px;
   }
+
+  .index-page header nav {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .index-page nav a {
+    font-size: 18px;
+  }
+
+  /* Smaller logo */
 
   .site-logo {
     width: 250px;
   }
 
-  header nav {
-    flex-wrap: wrap;
-    justify-content: center;
+  /* Smaller homepage headline */
+
+  .infra-section h2 {
+    font-size: 32px;
   }
 
-  nav a {
+  /* Stack feature cards */
+
+  .infra-columns {
+    grid-template-columns: 200px;
+    gap: 20px;
+  }
+
+  /* Dashboard becomes one column */
+
+  .dashboard-page {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr auto;
+  }
+
+  .dashboard-page header {
+    grid-column: 1;
+    grid-row: 1;
+
+    padding: 20px;
+  }
+
+/* Subnavigation card */
+    #subnav {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 25px;
+
+    background-color: rgba(255, 255, 255, 0.35);
+    border-radius: 10px;
+    padding: 20px;
+    box-sizing: border-box;
+    }
+
+  #subnav a {
     font-size: 18px;
   }
+
+  /* Financial content */
+
+  .dashboard-main {
+    grid-column: 1;
+    grid-row: 2;
+
+    padding: 20px;
+  }
+
+  .dashboard-main h2 {
+    font-size: 28px;
+  }
+
+  .financial-summary {
+    grid-template-columns: 1fr;
+  }
+
+  /* Footer */
+
+  .dashboard-page footer {
+    grid-column: 1;
+    grid-row: 3;
+  }
+
+}
+
+
+/* =========================================
+   15. MOCK USER PROFILE
+   ========================================= */
+
+.profile-menu {
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+}
+
+.profile-button {
+    width: 45px;
+    height: 45px;
+    border: 2px solid #364465;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.7);
+    color: #364465;
+    font-family: 'League Spartan', sans-serif;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.profile-dropdown {
+    display: none;
+    position: absolute;
+    top: 45px;
+    right: 0;
+    width: 150px;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.85);
+    border-radius: 10px;
+    box-sizing: border-box;
+    z-index: 10;
+}
+
+.profile-menu:hover .profile-dropdown,
+.profile-menu:focus-within .profile-dropdown {
+    display: flex;
+    flex-direction: column;
+}
+
+.profile-dropdown a {
+    padding: 10px;
+    color: #364465;
+    font-family: 'Garamond', serif;
+    font-size: 18px;
+    text-decoration: none;
+}
+
+.profile-dropdown a:hover,
+.profile-dropdown a:focus-visible {
+    background-color: rgba(54, 68, 101, 0.1);
+    border-radius: 5px;
 }
