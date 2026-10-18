@@ -1,0 +1,193 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;600;700;800;900&display=swap');
+
+/* Page layout */
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+}
+
+/* Header layout */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 20px 30px;
+  box-sizing: border-box;
+}
+
+/* Logo */
+header h1 {
+  margin: 0;
+  flex-shrink: 0;
+}
+
+.site-logo {
+  display: block;
+  width: 300px;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Navigation */
+header nav {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+nav a {
+  color: #364465;
+  font-family: Georgia, serif;
+  font-size: 21px;
+  text-decoration: none;
+}
+
+/* Navigation separators */
+nav a:not(:last-child)::after {
+  content: "|";
+  margin-left: 12px;
+}
+
+/* Navigation hover */
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* Wealth Without Limits */
+h2 {
+  color: #364465;
+  text-align: center;
+  font-family: 'League Spartan', sans-serif;
+  font-size: 48px;
+  margin-top: 0;
+  margin-bottom: 30px;
+}
+
+/* Dashboard button */
+.dashboard-btn {
+  display: block;
+  width: fit-content;
+  margin: 0 auto 40px;
+  padding: 7px 15px;
+
+  background: #ffbd59;
+  color: #364465;
+
+  font-family: 'League Spartan', sans-serif;
+  font-size: 18px;
+  font-weight: 900;
+  text-decoration: none;
+
+  border-radius: 30px;
+  text-align: center;
+}
+
+.dashboard-btn:hover {
+  background: #e5a43f;
+}
+
+/* Feature card labels */
+.infra-card p {
+  background: none;
+  border: none;
+  border-radius: 0;
+
+  color: white;
+  font-family: 'League Spartan', sans-serif;
+  font-size: 32px;
+  font-weight: 900;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 1.1;
+
+  width: 100%;
+  margin: 0;
+  padding: 10px 0;
+
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+/* Three feature cards */
+.infra-section {
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.infra-columns {
+  display: grid;
+  grid-template-columns: repeat(3, 200px);
+  justify-content: center;
+  gap: 50px;
+  width: 100%;
+}
+
+/* Individual cards */
+.infra-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 280px;
+  min-width: 0;
+  padding: 15px;
+  box-sizing: border-box;
+
+  background-size: cover;
+  background-position: center;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+/* Card labels */
+.infra-card p {
+  width: 100%;
+  margin: 0;
+  padding: 12px;
+  text-align: center;
+}
+
+/* Responsive layout */
+@media (max-width: 700px) {
+  .infra-columns {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Fun fact */
+p {
+  color: darkslategray;
+  background-color: oldlace;
+  border: 2px solid darkgoldenrod;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 20px;
+  font-size: 18px;
+  width: 80%;
+  max-width: 800px;
+  box-sizing: border-box;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 700px) {
+  header {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .site-logo {
+    width: 250px;
+  }
+
+  header nav {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  nav a {
+    font-size: 18px;
+  }
+}
